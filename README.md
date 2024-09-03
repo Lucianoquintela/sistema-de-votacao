@@ -24,9 +24,9 @@ Você pode acessar o sistema de votação através do seguinte link:
 
 Aqui estão algumas imagens do sistema de votação em funcionamento:
 
-| ![Imagem I](./assets/tela-inicial.jpg) | ![Imagem 2](./assets/tela-de-login.jpg) | ![Imagem 3](./assets/resultados-votacao.jpg) |
+| ![Imagem 1](./assets/tela-inicial.jpg) | ![Imagem 2](./assets/tela-de-login.jpg) | ![Imagem 3](./assets/resultados-votacao.jpg) |
 |:--------------------------------:|:--------------------------------:|:--------------------------------:|
-| Imagem 1                         | Imagem 2                         | Imagem 3                         |
+| Tela inicial                         | Tela de login                        | Detlhas sobre os votos                         |
 
 > **Nota:** Algumas telas foram modificadas durante o desenvolvimento portanto estão diferentes do protótipo criado no figma.
 
