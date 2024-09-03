@@ -26,9 +26,9 @@ Aqui estão algumas imagens do sistema de votação em funcionamento:
 
 | ![Imagem 1](./assets/tela-inicial.jpg) | ![Imagem 2](./assets/tela-de-login.jpg) | ![Imagem 3](./assets/resultados-votacao.jpg) |
 |:--------------------------------:|:--------------------------------:|:--------------------------------:|
-| Tela inicial                         | Tela de login                        | Detlhas sobre os votos                         |
+| Tela 01                      | Tela 02                       | Tela 03                        |
 
-> **Nota:** Algumas telas foram modificadas durante o desenvolvimento portanto estão diferentes do protótipo criado no figma.
+> **Nota:** 
 
 ## Design no Figma
 
