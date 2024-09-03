@@ -33,7 +33,7 @@ Aqui estão algumas imagens do sistema de votação em funcionamento:
 ## Design no Figma
 
 Você pode acessar o design do projeto no Figma através do seguinte link:  
-[**Link para o Figma**](https://www.figma.com/your-figma-link)
+[**Link para o Figma**](https://www.figma.com/design/3xkhldhJANtuy1tqETK8mB/Untitled?node-id=0-1&t=OiwInqLYqoVqiNr9-0)
 
 ## Autor
 
