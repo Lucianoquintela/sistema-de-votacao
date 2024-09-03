@@ -20,6 +20,21 @@ Você pode acessar o sistema de votação através do seguinte link:
 - **CSS3**
 - **JavaScript**
 
+## Imagens do Projeto
+
+Aqui estão algumas imagens do sistema de votação em funcionamento:
+
+| ![Imagem 1](./assets/image1.png) | ![Imagem 2](./assets/image2.png) | ![Imagem 3](./assets/image3.png) |
+|:--------------------------------:|:--------------------------------:|:--------------------------------:|
+| Imagem 1                         | Imagem 2                         | Imagem 3                         |
+
+> **Nota:** Substitua as imagens pelos seus próprios screenshots e ajuste os caminhos conforme necessário.
+
+## Design no Figma
+
+Você pode acessar o design do projeto no Figma através do seguinte link:  
+[**Link para o Figma**](https://www.figma.com/your-figma-link)
+
 ## Autor
 
 - **Luciano Quintela** - Desenvolvedor e criador do projeto.
