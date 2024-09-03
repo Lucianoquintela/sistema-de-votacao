@@ -24,11 +24,7 @@ Você pode acessar o sistema de votação através do seguinte link:
 
 Aqui estão algumas imagens do sistema de votação em funcionamento:
 
-<<<<<<< HEAD
-| ![Imagem 1](./assets/image1.png) | ![Imagem 2](./assets/image2.png) | ![Imagem 3](./assets/resultados-resultados-votacao.jpg)|
-=======
-| ![Imagem 1](./assets/image1.png) | ![Imagem 2](./assets/image2.png) | ![Imagem 3](./assets/resultados-votacao.jpg) |
->>>>>>> da656b6e6c5d13c25f2d0c59a6cf0d59c3628883
+| ![Imagem 1](./assets/tela-inicial.png) | ![Imagem 2](./assets/tela-de-login.png) | ![Imagem 3](./assets/.png) |
 |:--------------------------------:|:--------------------------------:|:--------------------------------:|
 | Imagem 1                         | Imagem 2                         | Imagem 3                         |
 
