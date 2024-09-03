@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Votação - Grêmio</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/mobile.css">
+    <link rel="shortcut icon" href="./src/img/logo-de-escola.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <a onclick="goBackOnePage()">
+            <img src="../img/logo-de-escola.png" alt="Logo da Escola">
+        </a>
+    </header>
+    <main>
+        <section class="login">
+            <div>
+                <label for="username">Usuário:</label><br>
+                <input type="text" id="username" required><br><br>
+                <label for="password">Senha:</label><br>
+                <input type="password" id="password" required><br>
+                <button onclick="login()">Entrar</button>
+                <br>
+                <p id="errorMessage" style="color:red;"></p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "admin" && password === "1234") {
+                window.location.href = "./telaDeVizualizarVotos.html";
+            } else {
+                document.getElementById("errorMessage").textContent = "Usuário ou senha incorretos.";
+            }
+        }
+
+        function goBackOnePage() {
+            history.go(-1);
+        }
+    </script>
+</body>
+</html>
+
+
+<style>
+
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #07072E;
+      color:white;
+    }
+
+    header {
+        text-align: center;
+        padding: 10px;
+    }
+
+    header img {
+        height: 130px;
+        margin-top: 25px;
+    }
+    
+    
+    .login{
+        
+       
+        display:flex;
+        justify-content:center;
+        margin-top: 50px;
+    }
+    
+    input{
+        padding:10px;
+        margin-top:3px;
+    }
+    
+    button{
+        display:block;
+        margin:auto;
+        padding:15px;
+        width:130px;
+        background-color:green;
+        margin-top:30px;
+       font-weight: bold;
+        color:white;
+        font-size:18px;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background-color: rgb(43, 167, 60);
+    }
+</style>
+

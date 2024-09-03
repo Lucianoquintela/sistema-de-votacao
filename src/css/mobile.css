@@ -1,0 +1,76 @@
+@media only screen and (max-width: 480px) {
+    .areaVotar {
+        display: flex;
+        padding: 30px;
+        gap: 15px;
+        justify-content: center;        
+        flex-direction:column;
+    }
+
+.alinhamentoMobile{
+    display:flex;
+    justify-content:center;
+}
+
+    .containerVotar {
+        padding: 20px;
+        margin-top: -30px;
+    }
+
+    .containerBotoes {
+        width: 250px;
+        text-align: center;
+        gap: 1px;           
+    }
+
+    .botoes {
+       padding: 16px;
+        width: 70px;
+        margin: 5px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .votar {
+        padding: 10px;
+        margin-top: 5px;
+      width:100%;
+    }
+
+    label {
+        color: white;
+    }
+
+    .botaoConfirmar {
+        background-color: #228B22;
+        padding: 15px;
+        width: 130px;
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 16px;
+        color:white;
+        border:  none;
+    }
+      .botaoContabilizar {
+        padding: 10px;
+        font-weight: bold;
+        font-size: 16px;      
+    }
+
+    .msgAlerta {
+        color: white;
+    }
+
+    .containerAlertaEvontabilizar {
+        display: flex;
+        margin-top: 70px;
+        padding: 20px;
+        justify-content: space-between;
+    }
+
+    .areaMsgalerta {
+        display: flex;
+        width: 400px;
+        align-items: center;
+    }
+}

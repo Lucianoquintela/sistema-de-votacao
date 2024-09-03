@@ -1,0 +1,130 @@
+  * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #07072E;
+    }
+
+    header {
+        text-align: center;
+        padding: 10px;
+    }
+
+    header img {
+        height: 130px;
+        margin-top: 25px;
+    }
+
+    .areaVotar {
+        display: flex;
+        padding: 30px;
+        gap: 200px;
+        justify-content: center;
+    }
+
+    .containerVotar {
+        padding: 20px;
+        margin-top: -20px;
+    }
+
+    .containerBotoes {
+        width: 250px;
+        text-align: center;
+        gap: 20px;
+    }
+
+    button{
+        cursor: pointer;
+    }
+    
+    .botoes {
+        padding: 16px;
+        width: 70px;
+        margin: 5px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .botoes:hover{
+        background-color: #312f8d;
+        color: white;
+        border: solid 1px #07072E;
+    }
+
+    .botaoApagar:hover{
+        background-color: rgb(211, 55, 28);
+        border: solid -10px white;
+    }
+
+    .votar {
+        padding: 10px;
+        margin-top: 5px;
+    }
+
+    label {
+        color: white;
+    }
+.botaoApagar{
+    background-color: rgb(192, 37, 37);
+
+        padding: 15px;
+        width: 80px;
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 16px;
+        color:white;
+        border:  none;
+}
+    .botaoConfirmar {
+        background-color: #228B22;
+        padding: 15px;
+        width: 130px;
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 16px;
+        color:white;
+        border:  none;
+    }
+
+
+.botaoConfirmar:hover{
+      background-color: green;
+      
+}
+
+    .botaoContabilizar {
+        padding: 10px;
+        font-weight: bold;
+        font-size: 16px;       
+    }
+
+    .botaoContabilizar:hover{
+        background-color: #1d1566;
+        color: white;
+    }
+
+    .msgAlerta {
+        color: white;
+    }
+
+    .containerAlertaEvontabilizar {
+        display: flex;
+        margin-top: 70px;
+        padding: 20px;
+        justify-content: space-between;
+    }
+
+    .areaMsgalerta {
+        display: flex;
+        width: 400px;
+        align-items: center;
+    }
+
+.btnApagarConfirnar{
+      display:flex;
+      gap:10px;
+      justify-content: center;
+}

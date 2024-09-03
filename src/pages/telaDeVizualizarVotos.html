@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Votação - Grêmio</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/mobile.css">
+    <link rel="shortcut icon" href="./src/img/logo-de-escola.png" type="image/x-icon">
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #07072E;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        header img {
+            height: 130px;
+            margin-top: 25px;
+        }
+
+        button {
+            cursor: pointer;
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .resultados {
+            margin: 20px;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin: 20px 0;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #222;
+        }
+
+        tr:hover {
+            background-color: #444;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .alinharTabela {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a onclick="goBackTwoPages()">
+            <img src="../img/logo-de-escola.png" alt="Logo da Escola">
+        </a>
+    </header>
+    <main>
+        <section id="resultados" class="resultados">
+            <!-- Resultados serão exibidos aqui -->
+        </section>
+
+        <section class="alinharTabela">
+            <div class="button-container">
+                <button onclick="showDetails()">Mostrar Detalhes</button>
+                <button onclick="resetData()">Resetar Dados Salvos</button>
+            </div>
+            <div id="details" class="hidden">
+                <table id="resultsTable"> 
+                    <thead>
+                        <tr>
+                            <th>Opção</th>
+                            <th>Votos</th>
+                            <th>Porcentagem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dados serão inseridos aqui -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function calculateVotes() {
+            let votes = JSON.parse(localStorage.getItem("votes")) || [];
+            let nullVotes = parseInt(localStorage.getItem("nullVotes")) || 0;
+
+            if (votes.length === 0 && nullVotes === 0) {
+                displayResults("Nenhum voto foi registrado ainda.");
+                return;
+            }
+
+            let totalVotes = votes.length + nullVotes;
+            let voteCount = {};
+            let mostVoted = null;
+            let maxVotes = 0;
+
+            votes.forEach(function(vote) {
+                if (voteCount[vote]) {
+                    voteCount[vote]++;
+                } else {
+                    voteCount[vote] = 1;
+                }
+                if (voteCount[vote] > maxVotes) {
+                    maxVotes = voteCount[vote];
+                    mostVoted = vote;
+                }
+            });
+
+            displayResults(
+                `Total de votos: ${totalVotes}<br>` +
+                `Número mais votado: ${mostVoted || "Nenhum"}<br>` +
+                `Votos nulos: ${nullVotes}`
+            );
+        }
+
+        function displayResults(message) {
+            let resultSection = document.getElementById("resultados");
+            resultSection.innerHTML = `<div class="resultado">${message}</div>`;
+        }
+
+        function showDetails() {
+            let detailsDiv = document.getElementById("details");
+            let resultsTable = document.getElementById("resultsTable").getElementsByTagName('tbody')[0];
+            resultsTable.innerHTML = ""; // Limpa a tabela antes de preencher
+
+            let votes = JSON.parse(localStorage.getItem("votes")) || [];
+            let nullVotes = parseInt(localStorage.getItem("nullVotes")) || 0;
+            let totalVotes = votes.length + nullVotes;
+            let voteCount = {};
+
+            votes.forEach(function(vote) {
+                if (voteCount[vote]) {
+                    voteCount[vote]++;
+                } else {
+                    voteCount[vote] = 1;
+                }
+            });
+
+            for (let option in voteCount) {
+                let row = resultsTable.insertRow();
+                let cellOption = row.insertCell(0);
+                let cellVotes = row.insertCell(1);
+                let cellPercentage = row.insertCell(2);
+
+                let count = voteCount[option];
+                let percentage = ((count / totalVotes) * 100).toFixed(2);
+
+                cellOption.textContent = option;
+                cellVotes.textContent = count;
+                cellPercentage.textContent = `${percentage}%`;
+            }
+
+            // Exibe ou oculta a tabela
+            detailsDiv.classList.toggle("hidden");
+        }
+
+        function resetData() {
+            if (confirm("Você realmente deseja apagar todos os dados salvos?")) {
+                localStorage.removeItem("votes");
+                localStorage.removeItem("nullVotes");
+                alert("Dados apagados com sucesso!");
+                location.reload();
+            }
+        }
+
+        function goBackTwoPages() {
+            history.go(-2);
+        }
+
+        window.onload = calculateVotes;
+    </script>
+</body>
+</html>

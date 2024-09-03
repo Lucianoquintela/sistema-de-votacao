@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Votação - Grêmio</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/mobile.css">
+    <link rel="shortcut icon" href="./src/img/logo-de-escola.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="./src/img/logo-de-escola.png" alt="Logo da Escola">
+    </header>
+    <main>
+        <section class="areaVotar">
+            <div class="containerVotar">
+                <label>Digite seu voto</label><br>
+                <input id="inputVoto" readonly class="votar" maxlength="2">
+            </div>
+            <div class="alinhamentoMobile">
+                <div class="containerBotoes">
+                    <button class="botoes" onclick="addNumber(1)">1</button>
+                    <button class="botoes" onclick="addNumber(2)">2</button>
+                    <button class="botoes" onclick="addNumber(3)">3</button>
+                    <button class="botoes" onclick="addNumber(4)">4</button>
+                    <button class="botoes" onclick="addNumber(5)">5</button>
+                    <button class="botoes" onclick="addNumber(6)">6</button>
+                    <button class="botoes" onclick="addNumber(7)">7</button>
+                    <button class="botoes" onclick="addNumber(8)">8</button>
+                    <button class="botoes" onclick="addNumber(9)">9</button>
+                    <div class="btnApagarConfirnar">      
+                        <button class="botaoApagar" onclick="clearInput()">Apagar</button>
+                        <button class="botaoConfirmar" onclick="confirmVote()">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="containerAlertaEvontabilizar">
+            <div class="areaMsgalerta">
+                <img src="./src/img/icon-alerta.png">
+                <p class="msgAlerta">Não digite nada e aperte confirmar para um voto nulo!</p>
+            </div>
+            <div>
+                <button class="botaoContabilizar" onclick="goToLogin()">Contabilizar votos</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let votes = JSON.parse(localStorage.getItem("votes")) || [];
+        let nullVotes = parseInt(localStorage.getItem("nullVotes")) || 0;
+
+        function addNumber(number) {
+            let input = document.getElementById("inputVoto");
+            input.value += number;
+        }
+
+        function clearInput() {
+            document.getElementById("inputVoto").value = "";
+        }
+
+        function confirmVote() {
+            let input = document.getElementById("inputVoto").value;
+            if (input === "") {
+                nullVotes++;
+            } else {
+                votes.push(parseInt(input));
+            }
+            // Atualiza o localStorage com os novos votos e votos nulos
+            localStorage.setItem("votes", JSON.stringify(votes));
+            localStorage.setItem("nullVotes", nullVotes);
+            clearInput();
+        }
+
+        function goToLogin() {
+            window.location.href = "./src/pages/telaDeLogin.html";
+        }
+    </script>
+</body>
+</html>
