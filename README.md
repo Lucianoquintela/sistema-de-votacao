@@ -24,6 +24,7 @@ Durante meu estágio, o supervisor solicitou que eu criasse um sistema de votaç
 - **CSS3**
 - **JavaScript**
 - **Gemini**
+- **ChatGPT**
 
 ## Imagens do Projeto
 
